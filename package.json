@@ -1,0 +1,19 @@
+{
+  "name": "@elucenia/tool-regras-de-ottawa-tornozelo",
+  "version": "0.1.0",
+  "description": "Regras de Ottawa para tornozelo e pé",
+  "main": "calculator.js",
+  "type": "commonjs",
+  "license": "MIT",
+  "scripts": {
+    "test": "node test.cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Elucenia/tool-regras-de-ottawa-tornozelo.git"
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "tool": {
+    "id": "regras-de-ottawa-tornozelo",
+    "title": "Regras de Ottawa para tornozelo e pé",
+    "short": "Quando pedir radiografia no entorse de tornozelo",
+    "desc": "Regras de Ottawa para tornozelo e pé: decida se o trauma agudo do tornozelo ou do mediopé precisa de radiografia para excluir fratura.",
+    "lead": "Regra de decisão clínica que identifica, no trauma agudo do tornozelo, quem precisa de radiografia do tornozelo ou do pé para excluir fratura. Validada em adultos.",
+    "spec": [
+      "ortopedia-e-traumatologia",
+      "medicina-de-emergencia",
+      "medicina-esportiva",
+      "medicina-de-familia-e-comunidade"
+    ],
+    "tier": 1,
+    "fields": [
+      [
+        "dor_tornozelo",
+        "Dor na região maleolar?",
+        "radio",
+        {
+          "opts": {
+            "0": "Não",
+            "1": "Sim"
+          }
+        }
+      ],
+      [
+        "dor_pe",
+        "Dor na região do mediopé?",
+        "radio",
+        {
+          "opts": {
+            "0": "Não",
+            "1": "Sim"
+          }
+        }
+      ],
+      [
+        "mal_lat",
+        "Dor à palpação na borda posterior ou na ponta do <strong>maléolo lateral</strong> (6 cm distais)",
+        "chk",
+        {
+          "pts": 1
+        }
+      ],
+      [
+        "mal_med",
+        "Dor à palpação na borda posterior ou na ponta do <strong>maléolo medial</strong> (6 cm distais)",
+        "chk",
+        {
+          "pts": 1
+        }
+      ],
+      [
+        "base5",
+        "Dor à palpação na <strong>base do 5º metatarso</strong>",
+        "chk",
+        {
+          "pts": 1
+        }
+      ],
+      [
+        "navic",
+        "Dor à palpação no <strong>navicular</strong>",
+        "chk",
+        {
+          "pts": 1
+        }
+      ],
+      [
+        "carga",
+        "Incapaz de dar 4 passos (mesmo mancando) logo após o trauma e no atendimento",
+        "chk",
+        {
+          "pts": 1
+        }
+      ]
+    ],
+    "formula": "<p><strong>Radiografia do tornozelo</strong> se houver dor na região maleolar e pelo menos um: dor à palpação da borda posterior ou ponta de um dos maléolos (6 cm distais) ou incapacidade de apoiar o peso (4 passos) logo após o trauma e no atendimento.</p><p><strong>Radiografia do pé</strong> se houver dor no mediopé e pelo menos um: dor à palpação da base do 5º metatarso, dor à palpação do navicular ou incapacidade de apoiar o peso.</p>",
+    "table": [
+      [
+        "Situação",
+        "Conduta"
+      ],
+      [
+        "Dor maleolar + qualquer critério do tornozelo",
+        "Radiografia do tornozelo"
+      ],
+      [
+        "Dor no mediopé + qualquer critério do pé",
+        "Radiografia do pé"
+      ],
+      [
+        "Nenhum critério presente",
+        "Radiografia dispensável; reavaliar se não melhorar"
+      ]
+    ],
+    "tips": [
+      "A palpação tem de ser na <strong>borda posterior</strong> dos 6 cm distais do maléolo: dor só no ligamento talofibular anterior não conta.",
+      "Os estudos originais excluíram menores de 18 anos, gestantes, intoxicados, pacientes com alteração sensitiva, trauma com mais de 10 dias e lesões múltiplas: nesses casos, a regra não vale.",
+      "A sensibilidade é próxima de 100% (revisão sistemática de Bachmann): a regra serve para <strong>descartar</strong> fratura, não para confirmá-la.",
+      "\"Incapaz de dar 4 passos\" significa não conseguir transferir o peso duas vezes em cada pé, mesmo mancando.",
+      "Com regra negativa, oriente retorno se a dor não melhorar em 5 a 7 dias."
+    ],
+    "sources": [
+      [
+        "Stiell IG et al. Decision rules for the use of radiography in acute ankle injuries: refinement and prospective validation. JAMA, 1993.",
+        "https://doi.org/10.1001/jama.1993.03500090063034"
+      ],
+      [
+        "Bachmann LM et al. Accuracy of Ottawa ankle rules to exclude fractures of the ankle and mid-foot: systematic review. BMJ, 2003.",
+        "https://doi.org/10.1136/bmj.326.7386.417"
+      ]
+    ],
+    "cases": [
+      [
+        "Dor maleolar e dor à palpação da ponta do maléolo lateral: radiografia do tornozelo",
+        {
+          "dor_tornozelo": "1",
+          "dor_pe": "0",
+          "mal_lat": true
+        },
+        {
+          "raw": {
+            "tornozelo": 1,
+            "pe": 0
+          },
+          "level": "mid"
+        }
+      ],
+      [
+        "Dor maleolar, sem dor óssea e apoiando o peso: radiografia dispensável",
+        {
+          "dor_tornozelo": "1",
+          "dor_pe": "0"
+        },
+        {
+          "raw": {
+            "tornozelo": 0,
+            "pe": 0
+          },
+          "level": "low",
+          "verdict": "dispensável"
+        }
+      ],
+      [
+        "Dor só no mediopé e incapaz de apoiar: radiografia do pé",
+        {
+          "dor_tornozelo": "0",
+          "dor_pe": "1",
+          "carga": true
+        },
+        {
+          "raw": {
+            "tornozelo": 0,
+            "pe": 1
+          },
+          "level": "mid",
+          "verdict": "pé indicada"
+        }
+      ],
+      [
+        "Dor nas duas regiões, base do 5º metatarso dolorosa e maléolo medial doloroso: as duas séries",
+        {
+          "dor_tornozelo": "1",
+          "dor_pe": "1",
+          "mal_med": true,
+          "base5": true
+        },
+        {
+          "raw": {
+            "tornozelo": 1,
+            "pe": 1
+          }
+        }
+      ]
+    ],
+    "batch": "cirurgia-sentidos",
+    "kind": "Calculadora",
+    "config": null,
+    "areaId": "cirurgia-sentidos",
+    "clinicalReview": "pending",
+    "sourceReview": "pending",
+    "sourceFile": "app/content/ferramentas/cirurgia-sentidos.php",
+    "arithmeticTest": {
+      "status": "passed",
+      "testedAt": "2026-09-25",
+      "total": 4,
+      "passed": 4,
+      "failures": []
+    },
+    "independentArithmeticTest": {
+      "status": "not-tested",
+      "testedAt": null,
+      "total": 0,
+      "passed": 0,
+      "cases": []
+    }
+  },
+  "review": {
+    "id": "regras-de-ottawa-tornozelo",
+    "reason": "O resultado principal é uma ordem de radiografia indicada ou dispensável. Esses textos sobrevivem à remoção das recomendações secundárias; suspender execução até revisar contexto, exclusões e apresentação não prescritiva. A ficha pública conserva os critérios e o estudo de origem.",
+    "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/8433468/",
+    "sourceTitle": "Stiell et al. — Ottawa ankle radiography rules (estudo original)",
+    "sourceDate": "1993-03-03",
+    "publisherRegion": "Canadá",
+    "observedMain": [
+      "Indicada — Radiografia",
+      "Dispensável — Radiografia"
+    ],
+    "status": "restricted",
+    "checkedAt": "2026-09-25",
+    "clinicalValidation": "not-performed",
+    "reviewScope": "Triagem da saída de software em casos fornecidos; identificação da publicação original e conferência limitada de seu contexto. Não é auditoria integral da regra, validação clínica ou revisão médica assinada.",
+    "implementationOutputAudit": "completed-on-supplied-cases",
+    "sourceReviewDepth": "original-reference-and-context-only",
+    "suppressLegacyFormula": true
+  },
+  "sourceFile": {
+    "path": "app/content/ferramentas/cirurgia-sentidos.php",
+    "sha256": "21fc91a9a8187a66496f68c2ac8fbdd20a65ceeea519687c963b857f72640866",
+    "bytes": 89063
+  },
+  "clinicalValidation": "not-performed"
+}

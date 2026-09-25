@@ -1,0 +1,87 @@
+[
+  {
+    "label": "Dor maleolar e dor à palpação da ponta do maléolo lateral: radiografia do tornozelo",
+    "input": {
+      "dor_tornozelo": "1",
+      "dor_pe": "0",
+      "mal_lat": true
+    },
+    "expected": {
+      "raw": {
+        "tornozelo": 1,
+        "pe": 0
+      },
+      "level": "mid"
+    },
+    "originalInput": {
+      "dor_tornozelo": "1",
+      "dor_pe": "0",
+      "mal_lat": true
+    },
+    "expandedZeroOptions": []
+  },
+  {
+    "label": "Dor maleolar, sem dor óssea e apoiando o peso: radiografia dispensável",
+    "input": {
+      "dor_tornozelo": "1",
+      "dor_pe": "0"
+    },
+    "expected": {
+      "raw": {
+        "tornozelo": 0,
+        "pe": 0
+      },
+      "level": "low",
+      "verdict": "dispensável"
+    },
+    "originalInput": {
+      "dor_tornozelo": "1",
+      "dor_pe": "0"
+    },
+    "expandedZeroOptions": []
+  },
+  {
+    "label": "Dor só no mediopé e incapaz de apoiar: radiografia do pé",
+    "input": {
+      "dor_tornozelo": "0",
+      "dor_pe": "1",
+      "carga": true
+    },
+    "expected": {
+      "raw": {
+        "tornozelo": 0,
+        "pe": 1
+      },
+      "level": "mid",
+      "verdict": "pé indicada"
+    },
+    "originalInput": {
+      "dor_tornozelo": "0",
+      "dor_pe": "1",
+      "carga": true
+    },
+    "expandedZeroOptions": []
+  },
+  {
+    "label": "Dor nas duas regiões, base do 5º metatarso dolorosa e maléolo medial doloroso: as duas séries",
+    "input": {
+      "dor_tornozelo": "1",
+      "dor_pe": "1",
+      "mal_med": true,
+      "base5": true
+    },
+    "expected": {
+      "raw": {
+        "tornozelo": 1,
+        "pe": 1
+      }
+    },
+    "originalInput": {
+      "dor_tornozelo": "1",
+      "dor_pe": "1",
+      "mal_med": true,
+      "base5": true
+    },
+    "expandedZeroOptions": []
+  }
+]

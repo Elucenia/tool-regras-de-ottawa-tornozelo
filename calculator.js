@@ -1,4 +1,6 @@
-/* ELUCENIA standalone integration. Source package metadata and rights: README.md. */
+/* tool-regras-de-ottawa-tornozelo · Elucenia · https://github.com/Elucenia/tool-regras-de-ottawa-tornozelo
+   Copyright (c) 2026 Elucenia · Felipe Guedes (fgxdev.com). Licensed under the Apache License 2.0: keep this notice and the NOTICE file, and mark your changes.
+   Standalone integration. Package metadata and rights: README.md. */
 (function(root){'use strict';
 function freeze(value){if(value&&typeof value==='object'){for(const item of Object.values(value))freeze(item);Object.freeze(value);}return value;}
 const TOOL=freeze({"id":"regras-de-ottawa-tornozelo","title":"Regras de Ottawa para tornozelo e pé","fields":[["dor_tornozelo","Dor na região maleolar?","radio",{"opts":{"0":"Não","1":"Sim"}}],["dor_pe","Dor na região do mediopé?","radio",{"opts":{"0":"Não","1":"Sim"}}],["mal_lat","Dor à palpação na borda posterior ou na ponta do <strong>maléolo lateral</strong> (6 cm distais)","chk",{"pts":1}],["mal_med","Dor à palpação na borda posterior ou na ponta do <strong>maléolo medial</strong> (6 cm distais)","chk",{"pts":1}],["base5","Dor à palpação na <strong>base do 5º metatarso</strong>","chk",{"pts":1}],["navic","Dor à palpação no <strong>navicular</strong>","chk",{"pts":1}],["carga","Incapaz de dar 4 passos (mesmo mancando) logo após o trauma e no atendimento","chk",{"pts":1}]],"config":null,"reviewStatus":"restricted","clinicalValidation":"not-performed"});
